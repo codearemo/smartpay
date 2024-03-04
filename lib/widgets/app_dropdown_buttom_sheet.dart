@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:assesment_test/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -8,10 +6,12 @@ class AppDropdownBottomSheet extends StatefulWidget {
     super.key,
     this.controller,
     this.focusNode,
+    this.validator,
   });
 
   final FocusNode? focusNode;
   final TextEditingController? controller;
+  final String? Function(String? value)? validator;
 
   @override
   State<AppDropdownBottomSheet> createState() => _AppDropdownBottomSheetState();
@@ -39,8 +39,7 @@ class _AppDropdownBottomSheetState extends State<AppDropdownBottomSheet> {
                 setState(() {
                   _controller.text = option['name'];
                 });
-                Navigator.pop(
-                    context);
+                Navigator.pop(context);
               },
             );
           }).toList(),
@@ -70,11 +69,12 @@ class _AppDropdownBottomSheetState extends State<AppDropdownBottomSheet> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: _controller.text.isEmpty ? AppColors.transparent : AppColors.primary,
-        )
-      ),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: _controller.text.isEmpty
+                ? AppColors.transparent
+                : AppColors.primary,
+          )),
       child: TextFormField(
         onTap: () {
           _showOptionsBottomSheet(context).then((_) {
@@ -83,6 +83,7 @@ class _AppDropdownBottomSheetState extends State<AppDropdownBottomSheet> {
         },
         readOnly: true,
         controller: _controller,
+        validator: widget.validator,
         decoration: InputDecoration(
           filled: true,
           fillColor: AppColors.grey50,
@@ -90,13 +91,14 @@ class _AppDropdownBottomSheetState extends State<AppDropdownBottomSheet> {
             color: AppColors.grey400,
           ),
           contentPadding: const EdgeInsets.all(16),
-          hintText: 'Select an option',
+          hintText: 'Select Country',
           suffixIcon: SizedBox(
             height: 20,
             child: Padding(
               padding: const EdgeInsets.all(10),
               child: Image.asset(
                 'assets/icons/chevron_bottom.png',
+                color: AppColors.grey500,
               ),
             ),
           ),

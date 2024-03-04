@@ -1,6 +1,5 @@
 import 'package:assesment_test/utils/colors.dart';
 import 'package:assesment_test/widgets/app_text.dart';
-import 'package:assesment_test/widgets/input_hash.dart';
 import 'package:flutter/material.dart';
 
 class SingleCharaterInput extends StatelessWidget {

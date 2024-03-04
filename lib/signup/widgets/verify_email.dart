@@ -5,7 +5,13 @@ import 'package:assesment_test/widgets/single_character_input.dart';
 import 'package:flutter/material.dart';
 
 class VerifyEmail extends StatefulWidget {
-  const VerifyEmail({super.key});
+  const VerifyEmail({super.key,
+    required this.gotoNextPage,
+    required this.codeTextCtrl
+  });
+
+  final VoidCallback gotoNextPage;
+  final TextEditingController codeTextCtrl;
 
   @override
   State<VerifyEmail> createState() => _VerifyEmailState();
@@ -45,7 +51,9 @@ class _VerifyEmailState extends State<VerifyEmail> {
         removeCharacter: removeCharacter,
         code: code,
         codeLength: codeLength,
-        confirmAction: () {},
+        confirmAction: () {
+          widget.gotoNextPage();
+        },
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,

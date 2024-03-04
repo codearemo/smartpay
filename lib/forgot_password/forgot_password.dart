@@ -15,22 +15,35 @@ class ForgotPasswordScreen extends StatefulWidget {
 }
 
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
+  final _formKey = GlobalKey<FormState>();
+  final emailTextCtrl = TextEditingController();
+
   bool emailVerified = false;
-  final Duration _revealDuration = const Duration(milliseconds: 500);
+  final Duration _revealDuration = const Duration(milliseconds: 300);
 
   void verifyEmail() {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
       setState(() {
         emailVerified = true;
       });
+    }
   }
 
   void gotoCreateNewPassword() {
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const NewPasswordScreen()));
+    Navigator.pushReplacement(context,
+        MaterialPageRoute(builder: (context) => const NewPasswordScreen()));
   }
 
   @override
   void initState() {
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    emailTextCtrl.dispose();
+    super.dispose();
   }
 
   @override
@@ -40,7 +53,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         padding: const EdgeInsets.all(AppConstants.generalPadding),
         child: AppElevatedButton(
           onPressed: emailVerified ? gotoCreateNewPassword : verifyEmail,
-          child:  Padding(
+          child: Padding(
             padding: const EdgeInsets.symmetric(
               vertical: 16,
             ),
@@ -54,24 +67,29 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           ),
         ),
       ),
-      body:  SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(AppConstants.generalPadding),
-          child: Stack(
-            children: [
-              AnimatedOpacity(
-                duration: _revealDuration,
-                opacity: emailVerified ? 0.0 : 1.0,
-                child: const SingleChildScrollView(
-                  child: EnterEmailForPasswordRecovery(),
+      body: SafeArea(
+        child: Form(
+          key: _formKey,
+          child: Padding(
+            padding: const EdgeInsets.all(AppConstants.generalPadding),
+            child: Stack(
+              children: [
+                AnimatedOpacity(
+                  duration: _revealDuration,
+                  opacity: emailVerified ? 1.0 : 0.0,
+                  child: const VerifiedEmail(),
                 ),
-              ),
-              AnimatedOpacity(
-                duration: _revealDuration,
-                opacity: emailVerified ? 1.0 : 0.0,
-                child: const VerifiedEmail(),
-              ),
-            ],
+                AnimatedOpacity(
+                  duration: _revealDuration,
+                  opacity: emailVerified ? 0.0 : 1.0,
+                  child: SingleChildScrollView(
+                    child: EnterEmailForPasswordRecovery(
+                      emailTextCtrl: emailTextCtrl,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

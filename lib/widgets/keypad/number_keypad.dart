@@ -111,7 +111,7 @@ class _AppKeypadState extends State<AppKeypad> {
           widget.child,
           const Spacer(),
           AppElevatedButton(
-            onPressed: widget.confirmAction,
+            onPressed: widget.code.text.length == widget.codeLength ? widget.confirmAction : null,
             child:  Padding(
               padding: const EdgeInsets.symmetric(
                 vertical: 16,

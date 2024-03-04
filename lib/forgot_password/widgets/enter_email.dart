@@ -1,15 +1,25 @@
 import 'package:assesment_test/utils/colors.dart';
+import 'package:assesment_test/utils/form_validators.dart';
 import 'package:assesment_test/widgets/app_input_field.dart';
 import 'package:assesment_test/widgets/app_text.dart';
 import 'package:flutter/material.dart';
 
-class EnterEmailForPasswordRecovery extends StatelessWidget {
+class EnterEmailForPasswordRecovery extends StatefulWidget {
   const EnterEmailForPasswordRecovery({
     super.key,
+    required this.emailTextCtrl,
   });
 
+  final TextEditingController emailTextCtrl;
+
+  @override
+  State<EnterEmailForPasswordRecovery> createState() => _EnterEmailForPasswordRecoveryState();
+}
+
+class _EnterEmailForPasswordRecoveryState extends State<EnterEmailForPasswordRecovery> {
   @override
   Widget build(BuildContext context) {
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -46,9 +56,11 @@ class EnterEmailForPasswordRecovery extends StatelessWidget {
         const SizedBox(
           height: 35,
         ),
-        const AppInputField(
+        AppInputField(
           hintText: 'Email',
           keyboardType: TextInputType.emailAddress,
+          validator: AppFormValidator.validateEmail,
+          controller: widget.emailTextCtrl,
         ),
         const SizedBox(
           height: 25,

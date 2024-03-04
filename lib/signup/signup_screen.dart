@@ -13,6 +13,19 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
+    final _formKey = GlobalKey<FormState>();
+
+  final emailTextCtrl = TextEditingController();
+  final codeTextCtrl = TextEditingController();
+
+  final fullNameTextCtrl = TextEditingController();
+  final usernameTextCtrl = TextEditingController();
+  final countryTextCtrl = TextEditingController();
+  final passwordTextCtrl = TextEditingController();
+
+  final pinTextCtrl = TextEditingController();
+
+
   final pageController = PageController();
   int curentPageIndex = 0;
 
@@ -35,6 +48,20 @@ class _SignupScreenState extends State<SignupScreen> {
   }
 
   @override
+  void dispose() {
+    pageController.dispose();
+    emailTextCtrl.dispose();
+    codeTextCtrl.dispose();
+    fullNameTextCtrl.dispose();
+    usernameTextCtrl.dispose();
+    countryTextCtrl.dispose();
+    passwordTextCtrl.dispose();
+    pinTextCtrl.dispose();
+
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -42,18 +69,36 @@ class _SignupScreenState extends State<SignupScreen> {
           onTap: gotoPreviousPage,
         ),
       ),
-      body: SafeArea(
-        child: PageView(
-          controller: pageController,
-          onPageChanged: (value) {
-            curentPageIndex = value;
-          },
-          children: const [
-            SignupEmail(),
-            VerifyEmail(),
-            PersonalInfoScreen(),
-            SetPin(),
-          ],
+      body: Form(
+        key: _formKey,
+        child: SafeArea(
+          child: PageView(
+            controller: pageController,
+            physics: const NeverScrollableScrollPhysics(),
+            onPageChanged: (value) {
+              curentPageIndex = value;
+            },
+            children: [
+              SignupEmail(
+                emailTextCtrl: emailTextCtrl,
+                formKey: _formKey,
+                gotoNextPage: gotoNextPage,
+              ),
+              VerifyEmail(
+                gotoNextPage: gotoNextPage,
+                codeTextCtrl: codeTextCtrl,
+              ),
+              PersonalInfoScreen(
+                gotoNextPage: gotoNextPage,
+                formKey: _formKey,
+                fullNameTextCtrl: fullNameTextCtrl,
+                usernameTextCtrl: usernameTextCtrl,
+                countryTextCtrl: countryTextCtrl,
+                passwordTextCtrl: passwordTextCtrl,
+              ),
+              const SetPin(),
+            ],
+          ),
         ),
       ),
     );

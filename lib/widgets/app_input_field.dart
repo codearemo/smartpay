@@ -11,11 +11,13 @@ class AppInputField extends StatefulWidget {
   final TextCapitalization textCapitalization;
   final bool obscureText;
   final FocusNode? focusNode;
+  final String? Function(String? value)? validator;
 
   const AppInputField({
     Key? key,
     this.controller,
     this.hintText,
+    this.validator,
     this.prefixIcon,
     this.suffixIcon,
     this.onChanged,
@@ -60,6 +62,7 @@ class _AppInputFieldState extends State<AppInputField> {
       focusNode: _focusNode,
       keyboardType: widget.keyboardType,
       textCapitalization: widget.textCapitalization,
+      validator: widget.validator,
       obscureText: obscure,
       obscuringCharacter: '\u{25CF}',
       onChanged: widget.onChanged,

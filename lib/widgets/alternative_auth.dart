@@ -88,19 +88,23 @@ class AlternateLoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        vertical: 12,
-      ),
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: AppColors.grey200,
+    return InkWell(
+      borderRadius: BorderRadius.circular(12),
+      onTap: () {},
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          vertical: 12,
         ),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: SizedBox(
-        height: 23,
-        child: child,
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: AppColors.grey200,
+          ),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: SizedBox(
+          height: 23,
+          child: child,
+        ),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:assesment_test/signup/widgets/signin_link.dart';
 import 'package:assesment_test/utils/colors.dart';
 import 'package:assesment_test/utils/constants.dart';
+import 'package:assesment_test/utils/form_validators.dart';
 import 'package:assesment_test/widgets/alternative_auth.dart';
 import 'package:assesment_test/widgets/app_elevated_button.dart';
 import 'package:assesment_test/widgets/app_input_field.dart';
@@ -10,7 +11,14 @@ import 'package:flutter/material.dart';
 class SignupEmail extends StatelessWidget {
   const SignupEmail({
     super.key,
+    required this.emailTextCtrl,
+    required this.formKey,
+    required this.gotoNextPage,
   });
+
+  final TextEditingController emailTextCtrl;
+  final GlobalKey<FormState> formKey;
+  final VoidCallback gotoNextPage;
 
   @override
   Widget build(BuildContext context) {
@@ -51,15 +59,22 @@ class SignupEmail extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            const AppInputField(
+            AppInputField(
               hintText: 'Email',
               keyboardType: TextInputType.emailAddress,
+              validator: AppFormValidator.validateEmail,
+              controller: emailTextCtrl,
             ),
             const SizedBox(
               height: 35,
             ),
             AppElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                if (formKey.currentState!.validate()) {
+                  formKey.currentState!.save();
+                  gotoNextPage();
+                }
+              },
               child: const Padding(
                 padding: EdgeInsets.symmetric(
                   vertical: 16,
