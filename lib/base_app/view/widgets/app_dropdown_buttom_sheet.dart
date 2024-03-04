@@ -1,7 +1,12 @@
 import 'package:animated_snack_bar/animated_snack_bar.dart';
 import 'package:smartpay/base_app/utils/colors.dart';
+import 'package:smartpay/base_app/utils/constants.dart';
 import 'package:smartpay/base_app/utils/loaders.dart';
+import 'package:smartpay/base_app/utils/size.dart';
 import 'package:smartpay/base_app/view/widgets/app_alert.dart';
+import 'package:smartpay/base_app/view/widgets/app_input_field.dart';
+import 'package:smartpay/base_app/view/widgets/app_text_button.dart';
+import 'package:smartpay/modules/utils/models/country_model.dart';
 import 'package:smartpay/modules/utils/presentation/state/utils_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,6 +31,7 @@ class AppDropdownBottomSheet extends StatefulWidget {
 class _AppDropdownBottomSheetState extends State<AppDropdownBottomSheet> {
   late FocusNode _focusNode;
   final _controller = TextEditingController();
+  final _searchController = TextEditingController();
 
   Future<void> triggerFetchCountries() async {
     final UtilsCubit utilsCubit = context.read<UtilsCubit>();
@@ -74,6 +80,12 @@ class _AppDropdownBottomSheetState extends State<AppDropdownBottomSheet> {
   Widget build(BuildContext context) {
     final UtilsCubit utilsCubit = context.read<UtilsCubit>();
 
+    final List<CountryModel> allCountries = utilsCubit.countries ?? [];
+
+    final filteredCountries = allCountries.where((element) {
+      return (element.name?.common ?? '').toLowerCase().contains(_searchController.text.toLowerCase());
+    });
+
     return TextFormField(
       onTap: () async {
         setState(() {});
@@ -86,40 +98,64 @@ class _AppDropdownBottomSheetState extends State<AppDropdownBottomSheet> {
             context: context,
             backgroundColor: AppColors.white,
             shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadiusDirectional.only(
-              bottomEnd: Radius.circular(0),
-              bottomStart: Radius.circular(0),
-              topEnd: Radius.circular(12),
-              topStart: Radius.circular(12),
-            )),
+              borderRadius: BorderRadius.vertical(top: Radius.circular(12.0)),
+            ),
             builder: (BuildContext context) {
-              return ListView(
-                      children: (utilsCubit.countries ?? []).map((option) {
-                        return ListTile(
-                          leading: Image.network(
-                            '${option.flags?.png}',
-                            width: 40,
-                            height: 20,
+              return Padding(
+                padding: const EdgeInsets.all(AppConstants.generalPadding),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Row(
+                      children: [
+                        Expanded(
+                          child: AppInputField(
+                            hintText: 'Search',
+                            controller: _searchController,
+                            onChanged: (value) {
+                              setState(() {});
+                            },
                           ),
-                          title: Text('${option.name?.common}'),
-                          trailing: widget.countryNameTextCtrl?.text ==
-                                  '${option.flag}'
-                              ? const Icon(
-                                  Icons.check_rounded,
-                                  color: AppColors.primary,
-                                )
-                              : null,
-                          onTap: () {
-                            setState(() {
-                              _controller.text = '${option.name?.common}';
-                              widget.countryNameTextCtrl?.text =
-                                  '${option.flag}';
-                            });
-                            context.pop();
-                          },
-                        );
-                      }).toList(),
-                    );
+                        ),
+                        AppTextButton(onPressed: () {
+                          context.pop();
+                        }, text: 'Cancel'),
+                      ],
+                    ),
+                    S.h(20),
+                    Expanded(
+                      child: ListView(
+                        shrinkWrap: true,
+                              children: (filteredCountries).map((option) {
+                                return ListTile(
+                                  leading: Image.network(
+                                    '${option.flags?.png}',
+                                    width: 40,
+                                    height: 20,
+                                  ),
+                                  title: Text('${option.name?.common}'),
+                                  trailing: widget.countryNameTextCtrl?.text ==
+                                          '${option.flag}'
+                                      ? const Icon(
+                                          Icons.check_rounded,
+                                          color: AppColors.primary,
+                                        )
+                                      : null,
+                                  onTap: () {
+                                    setState(() {
+                                      _controller.text = '${option.name?.common}';
+                                      widget.countryNameTextCtrl?.text =
+                                          '${option.flag}';
+                                    });
+                                    context.pop();
+                                  },
+                                );
+                              }).toList(),
+                            ),
+                    ),
+                  ],
+                ),
+              );
             },
           );
         }
