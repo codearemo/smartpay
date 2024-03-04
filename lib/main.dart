@@ -1,5 +1,6 @@
 import 'package:assesment_test/splash_screen/splash_screen.dart';
 import 'package:assesment_test/utils/colors.dart';
+import 'package:assesment_test/utils/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -28,8 +29,21 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           scaffoldBackgroundColor: AppColors.white,
           appBarTheme: const AppBarTheme(
-            color: AppColors.white,
+            backgroundColor: AppColors.white,
+            foregroundColor: AppColors.white,
+            surfaceTintColor: AppColors.white,
+            titleTextStyle:  TextStyle(
+              color: AppColors.grey900,
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: AppFonts.sfProDisplay,
+            ),
+            iconTheme:  IconThemeData(
+              color: AppColors.grey900,
+            ),
+            elevation: 0,
           ),
+          fontFamily: AppFonts.sfProDisplay,
         ),
         home: const MyHomePage(),
       ),
