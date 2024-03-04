@@ -1,4 +1,4 @@
-import 'package:assesment_test/base_app/core/abstractions/build_config.dart';
+import 'package:smartpay/base_app/core/abstractions/build_config.dart';
 import 'package:flutter/foundation.dart';
 
 class Env {

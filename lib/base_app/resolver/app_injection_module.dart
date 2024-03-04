@@ -1,17 +1,17 @@
 import 'dart:async';
 
-import 'package:assesment_test/base_app/core/api.dart';
-import 'package:assesment_test/base_app/core/storage.dart';
-import 'package:assesment_test/modules/account/presentation/state/account_cubit.dart';
-import 'package:assesment_test/modules/account/repos/account_repo.dart';
-import 'package:assesment_test/modules/account/repos/account_repo_impl.dart';
-import 'package:assesment_test/modules/account/services/account_service.dart';
-import 'package:assesment_test/modules/account/services/account_service_impl.dart';
-import 'package:assesment_test/modules/utils/presentation/state/utils_cubit.dart';
-import 'package:assesment_test/modules/utils/repos/utils_repo.dart';
-import 'package:assesment_test/modules/utils/repos/utils_repo_impl.dart';
-import 'package:assesment_test/modules/utils/services/utils_service.dart';
-import 'package:assesment_test/modules/utils/services/utils_service_impl.dart';
+import 'package:smartpay/base_app/core/api.dart';
+import 'package:smartpay/base_app/core/storage.dart';
+import 'package:smartpay/modules/account/presentation/state/account_cubit.dart';
+import 'package:smartpay/modules/account/repos/account_repo.dart';
+import 'package:smartpay/modules/account/repos/account_repo_impl.dart';
+import 'package:smartpay/modules/account/services/account_service.dart';
+import 'package:smartpay/modules/account/services/account_service_impl.dart';
+import 'package:smartpay/modules/utils/presentation/state/utils_cubit.dart';
+import 'package:smartpay/modules/utils/repos/utils_repo.dart';
+import 'package:smartpay/modules/utils/repos/utils_repo_impl.dart';
+import 'package:smartpay/modules/utils/services/utils_service.dart';
+import 'package:smartpay/modules/utils/services/utils_service_impl.dart';
 import 'package:get_it/get_it.dart';
 
 import '../core/abstractions/injection_module.dart';

@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:assesment_test/app.dart';
-import 'package:assesment_test/base_app/core/abstractions/build_config.dart';
-import 'package:assesment_test/base_app/core/abstractions/feature_resolver.dart';
-import 'package:assesment_test/base_app/core/abstractions/injection_module.dart';
-import 'package:assesment_test/base_app/core/abstractions/router_module.dart';
-import 'package:assesment_test/base_app/resolver/app_resolver.dart';
+import 'package:smartpay/app.dart';
+import 'package:smartpay/base_app/core/abstractions/build_config.dart';
+import 'package:smartpay/base_app/core/abstractions/feature_resolver.dart';
+import 'package:smartpay/base_app/core/abstractions/injection_module.dart';
+import 'package:smartpay/base_app/core/abstractions/router_module.dart';
+import 'package:smartpay/base_app/resolver/app_resolver.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:go_router/go_router.dart';

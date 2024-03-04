@@ -1,9 +1,9 @@
-import 'package:assesment_test/base_app/core/api.dart';
-import 'package:assesment_test/base_app/core/app_endpoints.dart';
-import 'package:assesment_test/base_app/core/storage.dart';
-import 'package:assesment_test/modules/utils/models/country_model.dart';
-import 'package:assesment_test/modules/utils/models/random_message_model.dart';
-import 'package:assesment_test/modules/utils/services/utils_service.dart';
+import 'package:smartpay/base_app/core/api.dart';
+import 'package:smartpay/base_app/core/app_endpoints.dart';
+import 'package:smartpay/base_app/core/storage.dart';
+import 'package:smartpay/modules/utils/models/country_model.dart';
+import 'package:smartpay/modules/utils/models/random_message_model.dart';
+import 'package:smartpay/modules/utils/services/utils_service.dart';
 import 'package:dio/dio.dart';
 
 class UtilsServiceImpl implements UtilsService {

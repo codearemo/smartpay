@@ -1,12 +1,12 @@
-import 'package:assesment_test/base_app/router/route_name.dart';
-import 'package:assesment_test/base_app/view/onboarding.dart/widgets/dots.dart';
-import 'package:assesment_test/base_app/view/onboarding.dart/widgets/slide_one.dart';
-import 'package:assesment_test/base_app/view/onboarding.dart/widgets/slide_two.dart';
-import 'package:assesment_test/base_app/utils/colors.dart';
-import 'package:assesment_test/base_app/view/widgets/app_elevated_button.dart';
-import 'package:assesment_test/base_app/view/widgets/app_text.dart';
-import 'package:assesment_test/base_app/view/widgets/app_text_button.dart';
-import 'package:assesment_test/modules/account/presentation/ui/signin/signin_screen.dart';
+import 'package:smartpay/base_app/router/route_name.dart';
+import 'package:smartpay/base_app/view/onboarding.dart/widgets/dots.dart';
+import 'package:smartpay/base_app/view/onboarding.dart/widgets/slide_one.dart';
+import 'package:smartpay/base_app/view/onboarding.dart/widgets/slide_two.dart';
+import 'package:smartpay/base_app/utils/colors.dart';
+import 'package:smartpay/base_app/view/widgets/app_elevated_button.dart';
+import 'package:smartpay/base_app/view/widgets/app_text.dart';
+import 'package:smartpay/base_app/view/widgets/app_text_button.dart';
+import 'package:smartpay/modules/account/presentation/ui/signin/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

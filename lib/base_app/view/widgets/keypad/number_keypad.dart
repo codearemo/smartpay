@@ -1,9 +1,9 @@
-import 'package:assesment_test/base_app/utils/colors.dart';
-import 'package:assesment_test/base_app/utils/constants.dart';
-import 'package:assesment_test/base_app/view/widgets/app_elevated_button.dart';
-import 'package:assesment_test/base_app/view/widgets/app_text.dart';
-import 'package:assesment_test/base_app/view/widgets/keypad/app_key.dart';
-import 'package:assesment_test/modules/account/presentation/state/account_cubit.dart';
+import 'package:smartpay/base_app/utils/colors.dart';
+import 'package:smartpay/base_app/utils/constants.dart';
+import 'package:smartpay/base_app/view/widgets/app_elevated_button.dart';
+import 'package:smartpay/base_app/view/widgets/app_text.dart';
+import 'package:smartpay/base_app/view/widgets/keypad/app_key.dart';
+import 'package:smartpay/modules/account/presentation/state/account_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

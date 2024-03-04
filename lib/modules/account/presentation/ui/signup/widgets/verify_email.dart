@@ -1,12 +1,12 @@
 import 'package:animated_snack_bar/animated_snack_bar.dart';
-import 'package:assesment_test/base_app/utils/colors.dart';
-import 'package:assesment_test/base_app/view/widgets/app_alert.dart';
-import 'package:assesment_test/base_app/view/widgets/app_text.dart';
-import 'package:assesment_test/base_app/view/widgets/counter_down_timer.dart';
-import 'package:assesment_test/base_app/view/widgets/keypad/number_keypad.dart';
-import 'package:assesment_test/base_app/view/widgets/single_character_input.dart';
-import 'package:assesment_test/modules/account/entities/verify_email_entity.dart';
-import 'package:assesment_test/modules/account/presentation/state/account_cubit.dart';
+import 'package:smartpay/base_app/utils/colors.dart';
+import 'package:smartpay/base_app/view/widgets/app_alert.dart';
+import 'package:smartpay/base_app/view/widgets/app_text.dart';
+import 'package:smartpay/base_app/view/widgets/counter_down_timer.dart';
+import 'package:smartpay/base_app/view/widgets/keypad/number_keypad.dart';
+import 'package:smartpay/base_app/view/widgets/single_character_input.dart';
+import 'package:smartpay/modules/account/entities/verify_email_entity.dart';
+import 'package:smartpay/modules/account/presentation/state/account_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,13 +1,13 @@
 import 'dart:convert';
 
-import 'package:assesment_test/base_app/core/app_cubit_state.dart';
-import 'package:assesment_test/base_app/core/storage.dart';
-import 'package:assesment_test/modules/account/entities/request_verification_entity.dart';
-import 'package:assesment_test/modules/account/entities/signin_entity.dart';
-import 'package:assesment_test/modules/account/entities/signup_entity.dart';
-import 'package:assesment_test/modules/account/entities/verify_email_entity.dart';
-import 'package:assesment_test/modules/account/models/signin_model.dart';
-import 'package:assesment_test/modules/account/repos/account_repo.dart';
+import 'package:smartpay/base_app/core/app_cubit_state.dart';
+import 'package:smartpay/base_app/core/storage.dart';
+import 'package:smartpay/modules/account/entities/request_verification_entity.dart';
+import 'package:smartpay/modules/account/entities/signin_entity.dart';
+import 'package:smartpay/modules/account/entities/signup_entity.dart';
+import 'package:smartpay/modules/account/entities/verify_email_entity.dart';
+import 'package:smartpay/modules/account/models/signin_model.dart';
+import 'package:smartpay/modules/account/repos/account_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AccountCubit extends Cubit<AppCubitState> {

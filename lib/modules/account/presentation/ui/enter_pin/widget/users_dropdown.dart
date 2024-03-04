@@ -1,7 +1,7 @@
-import 'package:assesment_test/base_app/utils/colors.dart';
-import 'package:assesment_test/base_app/utils/utils.dart';
-import 'package:assesment_test/base_app/view/widgets/app_text.dart';
-import 'package:assesment_test/modules/account/models/signin_model.dart';
+import 'package:smartpay/base_app/utils/colors.dart';
+import 'package:smartpay/base_app/utils/utils.dart';
+import 'package:smartpay/base_app/view/widgets/app_text.dart';
+import 'package:smartpay/modules/account/models/signin_model.dart';
 import 'package:flutter/material.dart';
 
 class UserDropDown extends StatelessWidget {

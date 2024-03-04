@@ -1,4 +1,4 @@
-import 'package:assesment_test/base_app/utils/colors.dart';
+import 'package:smartpay/base_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class AppText extends StatelessWidget {

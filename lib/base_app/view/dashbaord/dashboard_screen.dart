@@ -1,14 +1,14 @@
 import 'package:animated_snack_bar/animated_snack_bar.dart';
-import 'package:assesment_test/base_app/router/route_name.dart';
-import 'package:assesment_test/base_app/utils/constants.dart';
-import 'package:assesment_test/base_app/utils/size.dart';
-import 'package:assesment_test/base_app/utils/utils.dart';
-import 'package:assesment_test/base_app/view/widgets/app_alert.dart';
-import 'package:assesment_test/base_app/view/widgets/app_elevated_button.dart';
-import 'package:assesment_test/base_app/view/widgets/app_text.dart';
-import 'package:assesment_test/base_app/view/widgets/app_text_button.dart';
-import 'package:assesment_test/modules/account/presentation/state/account_cubit.dart';
-import 'package:assesment_test/modules/utils/presentation/state/utils_cubit.dart';
+import 'package:smartpay/base_app/router/route_name.dart';
+import 'package:smartpay/base_app/utils/constants.dart';
+import 'package:smartpay/base_app/utils/size.dart';
+import 'package:smartpay/base_app/utils/utils.dart';
+import 'package:smartpay/base_app/view/widgets/app_alert.dart';
+import 'package:smartpay/base_app/view/widgets/app_elevated_button.dart';
+import 'package:smartpay/base_app/view/widgets/app_text.dart';
+import 'package:smartpay/base_app/view/widgets/app_text_button.dart';
+import 'package:smartpay/modules/account/presentation/state/account_cubit.dart';
+import 'package:smartpay/modules/utils/presentation/state/utils_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

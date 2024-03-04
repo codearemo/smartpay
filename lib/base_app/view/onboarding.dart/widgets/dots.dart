@@ -1,5 +1,5 @@
-import 'package:assesment_test/base_app/view/onboarding.dart/onboarding.dart';
-import 'package:assesment_test/base_app/utils/colors.dart';
+import 'package:smartpay/base_app/view/onboarding.dart/onboarding.dart';
+import 'package:smartpay/base_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingDots extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'package:animated_snack_bar/animated_snack_bar.dart';
-import 'package:assesment_test/base_app/utils/colors.dart';
-import 'package:assesment_test/base_app/utils/loaders.dart';
-import 'package:assesment_test/base_app/view/widgets/app_alert.dart';
-import 'package:assesment_test/modules/utils/presentation/state/utils_cubit.dart';
+import 'package:smartpay/base_app/utils/colors.dart';
+import 'package:smartpay/base_app/utils/loaders.dart';
+import 'package:smartpay/base_app/view/widgets/app_alert.dart';
+import 'package:smartpay/modules/utils/presentation/state/utils_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

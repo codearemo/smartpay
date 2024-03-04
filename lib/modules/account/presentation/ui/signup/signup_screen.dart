@@ -1,8 +1,8 @@
-import 'package:assesment_test/base_app/view/widgets/back_button.dart';
-import 'package:assesment_test/modules/account/presentation/ui/signup/widgets/personal_info.dart';
-import 'package:assesment_test/modules/account/presentation/ui/signup/widgets/set_pin.dart';
-import 'package:assesment_test/modules/account/presentation/ui/signup/widgets/signup_email.dart';
-import 'package:assesment_test/modules/account/presentation/ui/signup/widgets/verify_email.dart';
+import 'package:smartpay/base_app/view/widgets/back_button.dart';
+import 'package:smartpay/modules/account/presentation/ui/signup/widgets/personal_info.dart';
+import 'package:smartpay/modules/account/presentation/ui/signup/widgets/set_pin.dart';
+import 'package:smartpay/modules/account/presentation/ui/signup/widgets/signup_email.dart';
+import 'package:smartpay/modules/account/presentation/ui/signup/widgets/verify_email.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

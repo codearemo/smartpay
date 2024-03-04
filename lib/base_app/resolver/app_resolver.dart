@@ -1,5 +1,5 @@
-import 'package:assesment_test/base_app/core/abstractions/feature_resolver.dart';
-import 'package:assesment_test/base_app/core/abstractions/router_module.dart';
+import 'package:smartpay/base_app/core/abstractions/feature_resolver.dart';
+import 'package:smartpay/base_app/core/abstractions/router_module.dart';
 
 import '../core/abstractions/injection_module.dart';
 import '../router/app_router.dart';

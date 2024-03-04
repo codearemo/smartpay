@@ -1,7 +1,7 @@
-import 'package:assesment_test/base_app/core/storage.dart';
-import 'package:assesment_test/base_app/router/route_name.dart';
-import 'package:assesment_test/base_app/view/splash_screen/widgets/typing_brand.dart';
-import 'package:assesment_test/modules/account/presentation/state/account_cubit.dart';
+import 'package:smartpay/base_app/core/storage.dart';
+import 'package:smartpay/base_app/router/route_name.dart';
+import 'package:smartpay/base_app/view/splash_screen/widgets/typing_brand.dart';
+import 'package:smartpay/modules/account/presentation/state/account_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

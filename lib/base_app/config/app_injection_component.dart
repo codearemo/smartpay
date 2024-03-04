@@ -1,5 +1,5 @@
-import 'package:assesment_test/base_app/config/constant_var.dart';
-import 'package:assesment_test/base_app/core/abstractions/injection_module.dart';
+import 'package:smartpay/base_app/config/constant_var.dart';
+import 'package:smartpay/base_app/core/abstractions/injection_module.dart';
 import 'package:get_it/get_it.dart';
 
 class AppInjectionComponent {

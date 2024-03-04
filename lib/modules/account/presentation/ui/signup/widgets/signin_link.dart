@@ -1,5 +1,5 @@
-import 'package:assesment_test/base_app/router/route_name.dart';
-import 'package:assesment_test/base_app/utils/colors.dart';
+import 'package:smartpay/base_app/router/route_name.dart';
+import 'package:smartpay/base_app/utils/colors.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

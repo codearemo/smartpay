@@ -1,11 +1,11 @@
-import 'package:assesment_test/base_app/router/route_name.dart';
-import 'package:assesment_test/modules/account/presentation/ui/forgot_password/create_new_password_screen.dart';
-import 'package:assesment_test/modules/account/presentation/ui/forgot_password/widgets/enter_email.dart';
-import 'package:assesment_test/modules/account/presentation/ui/forgot_password/widgets/verified_email.dart';
-import 'package:assesment_test/base_app/utils/colors.dart';
-import 'package:assesment_test/base_app/utils/constants.dart';
-import 'package:assesment_test/base_app/view/widgets/app_elevated_button.dart';
-import 'package:assesment_test/base_app/view/widgets/app_text.dart';
+import 'package:smartpay/base_app/router/route_name.dart';
+import 'package:smartpay/modules/account/presentation/ui/forgot_password/create_new_password_screen.dart';
+import 'package:smartpay/modules/account/presentation/ui/forgot_password/widgets/enter_email.dart';
+import 'package:smartpay/modules/account/presentation/ui/forgot_password/widgets/verified_email.dart';
+import 'package:smartpay/base_app/utils/colors.dart';
+import 'package:smartpay/base_app/utils/constants.dart';
+import 'package:smartpay/base_app/view/widgets/app_elevated_button.dart';
+import 'package:smartpay/base_app/view/widgets/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

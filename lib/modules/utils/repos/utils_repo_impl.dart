@@ -1,10 +1,10 @@
-import 'package:assesment_test/modules/utils/models/country_model.dart';
+import 'package:smartpay/modules/utils/models/country_model.dart';
 import 'package:dartz/dartz.dart';
 
-import 'package:assesment_test/base_app/core/error/failure.dart';
-import 'package:assesment_test/modules/utils/models/random_message_model.dart';
-import 'package:assesment_test/modules/utils/repos/utils_repo.dart';
-import 'package:assesment_test/modules/utils/services/utils_service.dart';
+import 'package:smartpay/base_app/core/error/failure.dart';
+import 'package:smartpay/modules/utils/models/random_message_model.dart';
+import 'package:smartpay/modules/utils/repos/utils_repo.dart';
+import 'package:smartpay/modules/utils/services/utils_service.dart';
 
 class UtilsRepoImpl implements UtilsRepo {
   final UtilsService srv;

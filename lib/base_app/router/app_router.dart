@@ -1,14 +1,14 @@
-import 'package:assesment_test/base_app/core/abstractions/router_module.dart';
-import 'package:assesment_test/base_app/router/route_name.dart';
-import 'package:assesment_test/base_app/view/dashbaord/dashboard_screen.dart';
-import 'package:assesment_test/modules/account/presentation/ui/forgot_password/create_new_password_screen.dart';
-import 'package:assesment_test/modules/account/presentation/ui/forgot_password/forgot_password.dart';
-import 'package:assesment_test/base_app/view/onboarding.dart/onboarding.dart';
-import 'package:assesment_test/base_app/view/splash_screen/splash_screen.dart';
-import 'package:assesment_test/modules/account/presentation/ui/enter_pin/enter_pin_screen.dart';
-import 'package:assesment_test/modules/account/presentation/ui/signin/signin_screen.dart';
-import 'package:assesment_test/modules/account/presentation/ui/signup/signup_congratulations_screen.dart';
-import 'package:assesment_test/modules/account/presentation/ui/signup/signup_screen.dart';
+import 'package:smartpay/base_app/core/abstractions/router_module.dart';
+import 'package:smartpay/base_app/router/route_name.dart';
+import 'package:smartpay/base_app/view/dashbaord/dashboard_screen.dart';
+import 'package:smartpay/modules/account/presentation/ui/forgot_password/create_new_password_screen.dart';
+import 'package:smartpay/modules/account/presentation/ui/forgot_password/forgot_password.dart';
+import 'package:smartpay/base_app/view/onboarding.dart/onboarding.dart';
+import 'package:smartpay/base_app/view/splash_screen/splash_screen.dart';
+import 'package:smartpay/modules/account/presentation/ui/enter_pin/enter_pin_screen.dart';
+import 'package:smartpay/modules/account/presentation/ui/signin/signin_screen.dart';
+import 'package:smartpay/modules/account/presentation/ui/signup/signup_congratulations_screen.dart';
+import 'package:smartpay/modules/account/presentation/ui/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

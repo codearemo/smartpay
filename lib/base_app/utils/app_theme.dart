@@ -1,5 +1,5 @@
-import 'package:assesment_test/base_app/utils/colors.dart';
-import 'package:assesment_test/base_app/utils/fonts.dart';
+import 'package:smartpay/base_app/utils/colors.dart';
+import 'package:smartpay/base_app/utils/fonts.dart';
 import 'package:flutter/material.dart';
 
 class AppTheme {

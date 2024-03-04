@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:assesment_test/base_app/utils/colors.dart';
+import 'package:smartpay/base_app/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class CountdownTimer extends StatefulWidget {
