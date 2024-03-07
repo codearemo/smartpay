@@ -73,18 +73,15 @@ class _AppDropdownBottomSheetState extends State<AppDropdownBottomSheet> {
   @override
   void dispose() {
     _focusNode.dispose();
+    _controller.dispose();
+    _searchController.dispose();
+    
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final UtilsCubit utilsCubit = context.read<UtilsCubit>();
-
-    final List<CountryModel> allCountries = utilsCubit.countries ?? [];
-
-    final filteredCountries = allCountries.where((element) {
-      return (element.name?.common ?? '').toLowerCase().contains(_searchController.text.toLowerCase());
-    });
+    final UtilsCubit utilsCubit = context.watch<UtilsCubit>();
 
     return TextFormField(
       onTap: () async {
@@ -101,6 +98,17 @@ class _AppDropdownBottomSheetState extends State<AppDropdownBottomSheet> {
               borderRadius: BorderRadius.vertical(top: Radius.circular(12.0)),
             ),
             builder: (BuildContext context) {
+              final UtilsCubit utilsCubit = context.watch<UtilsCubit>();
+
+              final List<CountryModel> allCountries =
+                  utilsCubit.countries ?? [];
+
+              final filteredCountries = allCountries.where((element) {
+                return (element.name?.common ?? '')
+                    .toLowerCase()
+                    .contains(_searchController.text.toLowerCase());
+              });
+
               return Padding(
                 padding: const EdgeInsets.all(AppConstants.generalPadding),
                 child: Column(
@@ -117,41 +125,46 @@ class _AppDropdownBottomSheetState extends State<AppDropdownBottomSheet> {
                             },
                           ),
                         ),
-                        AppTextButton(onPressed: () {
-                          context.pop();
-                        }, text: 'Cancel'),
+                        AppTextButton(
+                            onPressed: () {
+                              _searchController.text = '';
+                              context.pop();
+                            },
+                            text: 'Cancel'),
                       ],
                     ),
                     S.h(20),
                     Expanded(
                       child: ListView(
                         shrinkWrap: true,
-                              children: (filteredCountries).map((option) {
-                                return ListTile(
-                                  leading: Image.network(
-                                    '${option.flags?.png}',
-                                    width: 40,
-                                    height: 20,
-                                  ),
-                                  title: Text('${option.name?.common}'),
-                                  trailing: widget.countryNameTextCtrl?.text ==
-                                          '${option.flag}'
-                                      ? const Icon(
-                                          Icons.check_rounded,
-                                          color: AppColors.primary,
-                                        )
-                                      : null,
-                                  onTap: () {
-                                    setState(() {
-                                      _controller.text = '${option.name?.common}';
-                                      widget.countryNameTextCtrl?.text =
-                                          '${option.flag}';
-                                    });
-                                    context.pop();
-                                  },
-                                );
-                              }).toList(),
+                        children: (filteredCountries).map((option) {
+                          return ListTile(
+                            leading: Image.network(
+                              '${option.flags?.png}',
+                              width: 40,
+                              height: 20,
                             ),
+                            title: Text('${option.name?.common}'),
+                            trailing: widget.countryNameTextCtrl?.text ==
+                                    '${option.flag}'
+                                ? const Icon(
+                                    Icons.check_rounded,
+                                    color: AppColors.primary,
+                                  )
+                                : null,
+                            onTap: () {
+                              setState(() {
+                                _controller.text = '${option.name?.common}';
+                                widget.countryNameTextCtrl?.text =
+                                    '${option.flag}';
+
+                                _searchController.text = '';
+                              });
+                              context.pop();
+                            },
+                          );
+                        }).toList(),
+                      ),
                     ),
                   ],
                 ),
