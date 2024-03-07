@@ -66,6 +66,7 @@ class _AppInputFieldState extends State<AppInputField> {
       obscureText: obscure,
       obscuringCharacter: '\u{25CF}',
       onChanged: widget.onChanged,
+      style: const TextStyle(fontWeight: FontWeight.w600),
       decoration: InputDecoration(
         filled: true,
         fillColor: AppColors.grey50,
