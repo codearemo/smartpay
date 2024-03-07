@@ -3,6 +3,7 @@ import 'package:smartpay/base_app/utils/colors.dart';
 import 'package:smartpay/base_app/utils/constants.dart';
 import 'package:smartpay/base_app/utils/loaders.dart';
 import 'package:smartpay/base_app/utils/size.dart';
+import 'package:smartpay/base_app/utils/utils.dart';
 import 'package:smartpay/base_app/view/widgets/app_alert.dart';
 import 'package:smartpay/base_app/view/widgets/app_input_field.dart';
 import 'package:smartpay/base_app/view/widgets/app_text_button.dart';
@@ -173,6 +174,11 @@ class _AppDropdownBottomSheetState extends State<AppDropdownBottomSheet> {
           );
         }
       },
+      style: TextStyle(
+        fontWeight: FontWeight.w600,
+        color: AppColors.grey900,
+        fontSize: 16.sp,
+      ),
       readOnly: true,
       controller: _controller,
       validator: widget.validator,

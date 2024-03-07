@@ -1,5 +1,6 @@
 import 'package:smartpay/base_app/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:smartpay/base_app/utils/utils.dart';
 
 class AppInputField extends StatefulWidget {
   final TextEditingController? controller;
@@ -66,7 +67,11 @@ class _AppInputFieldState extends State<AppInputField> {
       obscureText: obscure,
       obscuringCharacter: '\u{25CF}',
       onChanged: widget.onChanged,
-      style: const TextStyle(fontWeight: FontWeight.w600),
+      style: TextStyle(
+        fontWeight: FontWeight.w600,
+        color: AppColors.grey900,
+        fontSize: 16.sp,
+      ),
       decoration: InputDecoration(
         filled: true,
         fillColor: AppColors.grey50,
