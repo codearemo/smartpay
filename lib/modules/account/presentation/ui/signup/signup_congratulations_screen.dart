@@ -1,6 +1,5 @@
 import 'package:smartpay/base_app/router/route_name.dart';
 import 'package:smartpay/base_app/utils/constants.dart';
-import 'package:smartpay/base_app/view/dashbaord/dashboard_screen.dart';
 import 'package:smartpay/base_app/utils/colors.dart';
 import 'package:smartpay/base_app/view/widgets/app_elevated_button.dart';
 import 'package:smartpay/base_app/view/widgets/app_text.dart';

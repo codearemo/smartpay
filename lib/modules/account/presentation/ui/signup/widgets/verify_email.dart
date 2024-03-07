@@ -149,7 +149,7 @@ class _VerifyEmailState extends State<VerifyEmail> {
             const SizedBox(
               height: 30,
             ),
-            CountdownTimer(
+            const CountdownTimer(
               seconds: 30,
             ),
             const SizedBox(

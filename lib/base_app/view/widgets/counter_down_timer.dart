@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 class CountdownTimer extends StatefulWidget {
   final int seconds;
 
-  CountdownTimer({required this.seconds});
+  const CountdownTimer({super.key, required this.seconds});
 
   @override
-  _CountdownTimerState createState() => _CountdownTimerState();
+  State<CountdownTimer> createState() => _CountdownTimerState();
 }
 
 class _CountdownTimerState extends State<CountdownTimer> {
@@ -30,10 +30,10 @@ class _CountdownTimerState extends State<CountdownTimer> {
   }
 
   void _startTimer() {
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         if (_remainingTime.inSeconds > 0) {
-          _remainingTime -= Duration(seconds: 1);
+          _remainingTime -= const Duration(seconds: 1);
         } else {
           _timer.cancel();
         }
