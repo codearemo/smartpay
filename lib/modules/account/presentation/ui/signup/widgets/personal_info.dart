@@ -63,6 +63,7 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
       );
 
       if (accountCubit.state.error == null) {
+        await Future.delayed(const Duration(milliseconds: 100));
         await accountCubit.signin(signinEntity);
         if (mounted) {
           if (accountCubit.state.error == null) {

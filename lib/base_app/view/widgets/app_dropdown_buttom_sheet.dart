@@ -55,11 +55,14 @@ class _AppDropdownBottomSheetState extends State<AppDropdownBottomSheet> {
     super.initState();
 
     final UtilsCubit utilsCubit = context.read<UtilsCubit>();
-    _controller.text = utilsCubit.countries == null
+    
+    _controller.text = utilsCubit.countries == null || utilsCubit.countries!.isEmpty || widget.countryNameTextCtrl?.text == ''
         ? ''
         : utilsCubit.countries
-                ?.firstWhere((element) =>
-                    element.flag == widget.countryNameTextCtrl?.text)
+                ?.firstWhere((element) {
+                  return element.flag == widget.countryNameTextCtrl?.text;
+                }
+                    )
                 .name
                 ?.common ??
             '';
